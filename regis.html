@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+        }
+        .container{
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        .new{
+            justify-content:center;
+            align-items:center;
+            padding:10px;
+        }
+        input[type="text"]{
+            padding:3px;
+            border-radius: 3px;
+        }
+        input[type="email"]{
+            padding:3px;
+            border-radius: 3px;
+        }
+        #su-msg {
+            display: none;
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="form-id">
+            <h2>Event Registration Form</h2>
+        <div class="new">
+            <label>First Name:</label>
+            <input type="text" placeholder="enter first name" id="fname" required>
+        </div>
+        <div class="new">
+            <label>Last Name:</label>
+            <input type="text" placeholder="enter last name" id="lname" required>
+        </div>
+        <div class="new">
+            <label>E-mail:</label>
+            <input type="email" placeholder="enter mail id" id="mail" required>
+        </div>
+        <div class="new">
+            <label>Phone Number:</label>
+            <input type="text" placeholder="enter phone number" id="pno" required>
+        </div>
+        <button type="submit" style="float:right;padding:5px;border-radius:5px;background-color:rgb(121, 121, 242);">submit</button>
+        <div id="su-msg">
+            Thankyou for Registering :)
+        </div>
+        </form>
+    </div>
+</body>
+<script>
+    const form=document.getElementById("form-id");
+    const successmsg=document.getElementById("su-msg");
+
+    form.addEventListener('submit',function(event){
+        event.preventDefault();
+        successmsg.style.display='block';
+        form.reset();
+    })
+</script>
+</html>
